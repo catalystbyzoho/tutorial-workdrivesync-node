@@ -1,0 +1,11 @@
+{
+	"name": "workdrivesync",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "amelia.burrows13@gmail.com",
+	"dependencies": {
+		"axios": "^0.22.0",
+		"form-data": "^4.0.0",
+		"zcatalyst-sdk-node": "latest"
+	}
+}

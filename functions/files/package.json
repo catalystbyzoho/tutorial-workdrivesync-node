@@ -1,0 +1,11 @@
+{
+	"name": "files",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "amelia.burrows13@gmail.com",
+	"dependencies": {
+		"axios": "^0.22.0",
+		"express": "^4.17.1",
+		"zcatalyst-sdk-node": "latest"
+	}
+}

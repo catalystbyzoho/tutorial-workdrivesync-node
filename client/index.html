@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WorkDriveSync</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="main.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://static.zohocdn.com/catalyst/sdk/js/2.0.0/catalystWebSDK.js"></script>
+    <script src="/__catalyst/sdk/init.js"></script>
+
+    <style>
+        #fileupload {
+            width: 450px;
+        }
+    </style>
+</head>
+
+<body onload="getfiles()">
+    <center>
+        <br>
+        <h1>Catalyst File Vault</h1>
+    </center>
+    <br>
+    <div style="width: 200px;float: left; margin-left: 50px;"><label for="logoutbtn"
+            class="btn btn-danger btn-block btn-outlined">Logout</label>
+        <button id="logoutbtn" onclick="logout()" style="display: none;"></button>
+    </div>
+    <div style="width: 200px;float: right; margin-right: 50px;"><label for="fileupload"
+            class="btn btn-success btn-block btn-outlined">Upload File</label>
+        <input type="file" id="fileupload" onchange="uploadfile()" name="myfile" style="display: none;">
+    </div><br><br><br><br>
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified mb-3" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active " id="check-tab" data-toggle="tab" href="#check" role="tab"
+                    aria-controls="check" aria-selected="true">Filestore -> Workdrive Sync</a>
+            </li>
+        </ul><br>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="check" role="tabpanel" aria-labelledby="check-tab">
+                <p id="filestore"></p>
+                <div id="loader" style="display: none;">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <center>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                        <div class="modal-body" id="message"></div>
+                        <div class="modal-footer">
+                            <button type="button" style="background-color: #007bff;color: white;"
+                                class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade right" id="ModalDanger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-danger modal-side modal-top-right" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading">File Deletion</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-9">
+                            <p>Are you sure you want to delete the file?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-danger" id="delete-btn" onclick="deleteFile()">Delete</a>
+                    <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Cancel</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+</body>
+
+</html>

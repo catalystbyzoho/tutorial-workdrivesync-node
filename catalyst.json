@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "targets": [
+      "workdrivesync",
+      "files"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

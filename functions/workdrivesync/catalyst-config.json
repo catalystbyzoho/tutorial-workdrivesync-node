@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "workdrivesync",
+		"stack": "node14",
+		"type": "event"
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}
