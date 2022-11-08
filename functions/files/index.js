@@ -8,11 +8,11 @@ const axios = require('axios').default;
 
 const credentials = {
 	WorkDriveConnectorz: {
-		client_id: '1000.SJP52ADYSZO48WLXCOMN7TPZ4HPIDK', //Enter your Client ID
-		client_secret: 'd456eb652e2a015c3d681fd328c3932f19730065c2', //Enter your Client Secret
+		client_id: '{{YOUR_CLIENT_ID}}', //Enter your Client ID
+		client_secret: '{{YOUR_CLIENT_SECRET}}', //Enter your Client Secret
 		auth_url: 'https://accounts.zoho.com/oauth/v2/token',
 		refresh_url: 'https://accounts.zoho.com/oauth/v2/token',
-		refresh_token: '1000.8e1185ab7712dbef22e5ee0a423d1f4b.0ca150be3717987112f3d58d026ad4a9' //Enter your Refresh Token
+		refresh_token: '{{REFRESH_TOKEN}}' //Enter your Refresh Token
 	}
 }
 
